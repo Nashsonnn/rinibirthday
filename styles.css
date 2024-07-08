@@ -1,3 +1,5 @@
+/* styles.css */
+
 /* General styles */
 body {
   min-height: 100vh;
@@ -39,7 +41,7 @@ body {
   font-family: 'Great Vibes', cursive;
   font-size: 3rem;
   margin-bottom: 16px;
-  animation: bounce 1s infinite;
+  animation: bounce 2s infinite;
 }
 
 @keyframes bounce {
@@ -190,6 +192,11 @@ body {
 .countdown p:first-child {
   font-weight: bold; /* Make the first paragraph bold */
 }
+
+.countdown p:last-child {
+  margin-bottom: 0; /* Remove bottom margin from last paragraph */
+}
+
 /* Confetti */
 .confetti-container {
   position: fixed;
@@ -219,8 +226,4 @@ body {
       transform: translateY(100vh) rotate(360deg);
       opacity: 0;
   }
-}
-
-.countdown p:last-child {
-  margin-bottom: 0; /* Remove bottom margin from last paragraph */
 }

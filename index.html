@@ -3,18 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday Rini 😻</title>
+    <title>Happy Birthday, Rini</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Raleway:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="icon" href="assets/9656139.png" type="image/x-icon">
-
 </head>
 <body>
 <div class="container">
     <div class="card">
         <h1>Happy Birthday, Rini</h1>
         <p>I wish you will have a lovely birthday with all your favorite things and people.</p>
-        <img src="assets/Background.png" alt="gojo">
+        <img src="C:\Users\Nashson Gurung\Desktop\Web Nashson\Html webs\New folder\assets\Background.png" alt="birthday-cake">
         <div class="buttons">
             <button class="primary" onclick="openGift()">🎁 Open Your Gift</button>
             <button class="primary" onclick="openAnotherModal()">🎉 Surprise!?</button>
@@ -99,6 +97,12 @@
         modal.style.display = 'block';
     }
 
+    function openAnotherModal() {
+        closeModal('bibleModal'); // Close Bible modal if open
+        const modal = document.getElementById('popupMessage');
+        modal.style.display = 'block';
+    }
+
     function displayBibleVerse() {
         const verses = [
             "For I know the plans I have for you, declares the Lord, plans for welfare and not for evil, to give you a future and a hope. - Jeremiah 29:11",
@@ -119,9 +123,13 @@
 
     window.onclick = function(event) {
         const modal = document.getElementById('giftModal');
+        const popupModal = document.getElementById('popupMessage');
         const bibleModal = document.getElementById('bibleModal');
         if (event.target === modal) {
             modal.style.display = 'none';
+        }
+        if (event.target === popupModal) {
+            popupModal.style.display = 'none';
         }
         if (event.target === bibleModal) {
             bibleModal.style.display = 'none';

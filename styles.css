@@ -2,18 +2,20 @@
 
 /* General styles */
 body {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(to right, #ff416c, #ff4b2b, #ffbb00);
-    color: #fff;
-    font-family: 'Raleway', sans-serif;
-    text-align: center;
-    padding: 16px;
-  }
-  
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, #ff9a9e, #fecfef, #f6a6c1);
+  color: #fff;
+  font-family: 'Raleway', sans-serif;
+  text-align: center;
+  padding: 16px;
+  margin: 0;
+  overflow: hidden; /* Prevent scroll */
+  position: relative;
+}
   .container {
     display: flex;
     flex-direction: column;

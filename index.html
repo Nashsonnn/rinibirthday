@@ -101,6 +101,7 @@
         closeModal('bibleModal'); // Close Bible modal if open
         const modal = document.getElementById('popupMessage');
         modal.style.display = 'block';
+        launchConfetti();
     }
 
     function displayBibleVerse() {
@@ -135,6 +136,25 @@
             bibleModal.style.display = 'none';
         }
     }
+
+    function launchConfetti() {
+    const confettiContainer = document.createElement('div');
+    confettiContainer.classList.add('confetti-container');
+    document.body.appendChild(confettiContainer);
+
+    for (let i = 0; i < 100; i++) {
+        const confetti = document.createElement('div');
+        confetti.classList.add('confetti');
+        confetti.style.left = `${Math.random() * 100}vw`;
+        confetti.style.animationDuration = `${Math.random() * 3 + 2}s`;
+        confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+        confettiContainer.appendChild(confetti);
+    }
+
+    setTimeout(() => {
+        document.body.removeChild(confettiContainer);
+    }, 5000); // Remove confetti after 5 seconds
+}
 
     // Debugging: Check if the countdown function is being called
     console.log("Countdown script loaded.");

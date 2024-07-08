@@ -1,5 +1,3 @@
-/* styles.css */
-
 /* General styles */
 body {
   min-height: 100vh;
@@ -13,143 +11,144 @@ body {
   text-align: center;
   padding: 16px;
   margin: 0;
-  overflow: scroll; /* Prevent scroll */
+  overflow: scroll;
   position: relative;
 }
-  .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 100%;
-    padding: 0 16px;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 100%;
+  padding: 0 16px;
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #333;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 600px; /* Maximum width for the card */
+  width: 100%;
+  margin-bottom: 16px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.card h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 3rem;
+  margin-bottom: 16px;
+  animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+      transform: translateY(0);
   }
-  
-  .card {
-    background-color: rgba(255, 255, 255, 0.9);
-    color: #333;
-    padding: 24px;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    max-width: 600px; /* Maximum width for the card */
-    width: 100%;
-    margin-bottom: 16px;
-    animation: fadeIn 1s ease-in-out;
+  50% {
+      transform: translateY(-10px);
   }
-  
-  .card h1 {
-    font-family: 'Great Vibes', cursive;
-    font-size: 3rem;
-    margin-bottom: 16px;
-    animation: bounce 1s infinite;
-  }
-  
-  @keyframes bounce {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
-  }
-  
-  .card p {
-    font-size: 1.125rem;
-    margin-bottom: 24px;
-  }
-  
-  .card img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  .card .buttons {
-    margin-top: 24px;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
-  
-  .card button {
-    padding: 12px 24px;
-    border: none;
-    border-radius: 8px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-  }
-  
-  .card button.primary {
-    background-color: #ff4b2b;
-    color: #fff;
-  }
-  
-  .card button.primary:hover {
-    background-color: #ff6b3b;
-    transform: scale(1.05);
-  }
-  
-  .card button.secondary {
-    background-color: #ffbb00;
-    color: #333;
-  }
-  
-  .card button.secondary:hover {
-    background-color: #ffd700;
-    transform: scale(1.05);
-  }
-  
-  .message {
-    font-size: 1.5rem;
-    color: #fff;
-    margin-top: 16px;
-    animation: fadeIn 1s ease-in-out;
-  }
-  
-  .footer {
-    color: #000000;
-    margin-top: 16px;
-  }
-  
-  /* Modal styles */
-  .modal {
-    display: none;
-    position: fixed;
-    z-index: 9999;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.5);
-  }
-  
-  .modal-content {
-    background-color: #fefefe;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    max-width: 600px;
-    border-radius: 8px;
-    position: relative;
-  }
-  
-  .close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-  }
-  
-  .close:hover,
-  .close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-  }
+}
+
+.card p {
+  font-size: 1.125rem;
+  margin-bottom: 24px;
+}
+
+.card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card .buttons {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.card button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.card button.primary {
+  background-color: #ff4b2b;
+  color: #fff;
+}
+
+.card button.primary:hover {
+  background-color: #ff6b3b;
+  transform: scale(1.05);
+}
+
+.card button.secondary {
+  background-color: #ffbb00;
+  color: #333;
+}
+
+.card button.secondary:hover {
+  background-color: #ffd700;
+  transform: scale(1.05);
+}
+
+.message {
+  font-size: 1.5rem;
+  color: #000000;
+  margin-top: 16px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.footer {
+  color: #000000;
+  margin-top: 16px;
+}
+
+/* Modal styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 600px;
+  border-radius: 8px;
+  position: relative;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
 /* Style for the popupMessage modal */
 #popupMessage .modal-content {
   background-color: #ffffff; /* Change background color for the popupMessage modal */
@@ -167,24 +166,17 @@ body {
   line-height: 1.5; /* Line height for paragraphs in the popupMessage modal */
 }
 
-  
-  /* Change h2 color in giftModal */
-  #giftModal h2 {
-    color: #FF5733; /* Your desired text color */
-  }
-  /* Countdown */
+/* Change h2 color in giftModal */
+#giftModal h2 {
+  color: #FF5733; /* Your desired text color */
+}
+
+/* Countdown */
 .countdown {
   font-size: 1.2rem;
   text-align: center;
   margin-top: 16px;
   color: #000000;
-}
-/* Countdown styles */
-.countdown {
-  font-size: 1.2rem;
-  text-align: center;
-  margin-top: 16px;
-  color: #000000; /* Text color */
   background: linear-gradient(to right, #ff7e83, #fdb3b5, #f593aa); /* Darker gradient background */
   padding: 16px; /* Padding around the countdown */
   border-radius: 8px; /* Rounded corners */
@@ -202,4 +194,3 @@ body {
 .countdown p:last-child {
   margin-bottom: 0; /* Remove bottom margin from last paragraph */
 }
-

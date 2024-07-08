@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, Rini</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Raleway:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1>Happy Birthday, Rini</h1>
+            <p>I wish you will have a lovely birthday with all your favorite things and people.</p>
+            <img src="C:\Users\Nashson Gurung\Desktop\Web Nashson\Html webs\New folder\assets\Background.png"alt="birthday-cake">
+            <div class="buttons">
+                <button class="primary" onclick="openGift()">🎁 Open Your Gift</button>
+            </div>
+        </div>
+        <div class="message" id="message"></div>
+    </div>
+    
+    <!-- Gift Modal -->
+    <div id="giftModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('giftModal')">&times;</span>
+            <h2>"May he give you the desire of your heart and make all your plans succeed." - Psalm 20:4</h2>
+            <!-- Content of your gift modal goes here -->
+        </div>
+    </div>
+    
+    <!-- Bible Verse Modal -->
+    <div id="bibleModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('bibleModal')">&times;</span>
+            <h2>Bible Verse</h2>
+            <p id="bibleVerse"></p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Made with ❤️ by Nashson</p>
+    </div>
+
+    <script>
+        function showMessage(type) {
+            const messageDiv = document.getElementById('message');
+            if (type === 'gift') {
+                messageDiv.innerHTML = '<p>You are the most precious gift in my life. Happy Birthday! 🎂❤️</p>';
+            } else {
+                messageDiv.innerHTML = '<p>Let\'s celebrate your special day together. You mean the world to me! 🎉💕</p>';
+            }
+        }
+
+        function openGift() {
+            closeModal('bibleModal'); // Close Bible modal if open
+            const modal = document.getElementById('giftModal');
+            modal.style.display = 'block';
+        }
+
+        function displayBibleVerse() {
+            const verses = [
+                "For I know the plans I have for you, declares the Lord, plans for welfare and not for evil, to give you a future and a hope. - Jeremiah 29:11",
+                "The Lord bless you and keep you; the Lord make his face to shine upon you and be gracious to you. - Numbers 6:24-25"
+                // Add more verses as needed
+            ];
+            const randomIndex = Math.floor(Math.random() * verses.length);
+            const bibleVerseDiv = document.getElementById('bibleVerse');
+            bibleVerseDiv.textContent = verses[randomIndex];
+            const bibleModal = document.getElementById('bibleModal');
+            bibleModal.style.display = 'block';
+        }
+
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('giftModal');
+            const bibleModal = document.getElementById('bibleModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+            if (event.target === bibleModal) {
+                bibleModal.style.display = 'none';
+            }
+        };
+    </script>
+</body>
+</html>

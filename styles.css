@@ -155,4 +155,34 @@ body {
   #giftModal h2 {
     color: #FF5733; /* Your desired text color */
   }
-  
+  /* Countdown */
+.countdown {
+  font-size: 1.2rem;
+  text-align: center;
+  margin-top: 16px;
+  color: #000000;
+}
+/* Countdown styles */
+.countdown {
+  font-size: 1.2rem;
+  text-align: center;
+  margin-top: 16px;
+  color: #000000; /* Text color */
+  background: linear-gradient(to right, #ff7e83, #fdb3b5, #f593aa); /* Darker gradient background */
+  padding: 16px; /* Padding around the countdown */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+}
+
+.countdown p {
+  margin-bottom: 8px; /* Space between paragraphs */
+}
+
+.countdown p:first-child {
+  font-weight: bold; /* Make the first paragraph bold */
+}
+
+.countdown p:last-child {
+  margin-bottom: 0; /* Remove bottom margin from last paragraph */
+}
+

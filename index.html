@@ -46,6 +46,35 @@
     </div>
 
     <script>
+           // Set the birth date of Rini (July 9, 2007)
+    const birthDate = new Date('2007-07-09T00:00:00');
+    const countdownElement = document.getElementById('countdown');
+
+    function updateCountdown() {
+        const currentDate = new Date();
+        const difference = currentDate - birthDate;
+
+        // Calculate elapsed time in years, months, days, hours, minutes, seconds
+        const totalSeconds = Math.floor(difference / 1000);
+        const years = Math.floor(totalSeconds / (365 * 24 * 60 * 60));
+        const months = Math.floor((totalSeconds % (365 * 24 * 60 * 60)) / (30 * 24 * 60 * 60)); // Approximate months
+        const days = Math.floor((totalSeconds % (24 * 60 * 60)) / (60 * 60 * 24));
+        const hours = Math.floor((totalSeconds % (60 * 60 * 24)) / (60 * 60));
+        const minutes = Math.floor((totalSeconds % (60 * 60)) / 60);
+        const seconds = totalSeconds % 60;
+
+        // Display the countdown with animation
+        countdownElement.innerHTML = `
+            <p>Counting the Years Since Your Beauty Came To Earth</p>
+            <p>${years} years, ${months} months, ${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds</p>
+        `;
+        
+        // Repeat the update every second for animation effect
+        setTimeout(updateCountdown, 1000);
+    }
+
+    // Start the countdown
+    updateCountdown();
         function showMessage(type) {
             const messageDiv = document.getElementById('message');
             if (type === 'gift') {

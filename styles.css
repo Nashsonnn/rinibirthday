@@ -150,6 +150,23 @@ body {
     text-decoration: none;
     cursor: pointer;
   }
+/* Style for the popupMessage modal */
+#popupMessage .modal-content {
+  background-color: #ffffff; /* Change background color for the popupMessage modal */
+  color: #000000; /* Text color for the popupMessage modal */
+}
+
+#popupMessage h2 {
+  color: #333; /* Heading color for the popupMessage modal */
+  font-size: 1.5rem; /* Font size for the heading in the popupMessage modal */
+  margin-bottom: 10px; /* Bottom margin for the heading in the popupMessage modal */
+}
+
+#popupMessage p {
+  font-size: 1rem; /* Font size for paragraphs in the popupMessage modal */
+  line-height: 1.5; /* Line height for paragraphs in the popupMessage modal */
+}
+
   
   /* Change h2 color in giftModal */
   #giftModal h2 {

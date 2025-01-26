@@ -3,161 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday, Rini</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Raleway:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>Zikirah x Miku DDoS Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #121212;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            text-align: center;
+            padding: 50px;
+            background: linear-gradient(to right, #00ff99, #00ccff);
+            color: black;
+        }
+        .header h1 {
+            font-size: 50px;
+        }
+        .content {
+            text-align: center;
+            padding: 40px;
+            background-color: #222222;
+            margin: 0;
+            font-size: 20px;
+            overflow: hidden;
+        }
+        .footer {
+            text-align: center;
+            background-color: #333333;
+            padding: 20px;
+            color: #888;
+        }
+        .highlight {
+            color: #ff66cc;
+            font-weight: bold;
+        }
+        .animation {
+            animation: blink 1s infinite alternate;
+        }
+        @keyframes blink {
+            50% {
+                color: #00ff99;
+            }
+        }
+        .glitch {
+            color: #ff0033;
+            font-size: 22px;
+            animation: glitch 1s infinite alternate;
+        }
+        @keyframes glitch {
+            0% { transform: translateX(5px); color: #ff0033; }
+            25% { transform: translateY(-5px); color: #ff66cc; }
+            50% { transform: translateX(-5px); color: #00ccff; }
+            75% { transform: translateY(5px); color: #ff0033; }
+            100% { transform: translateX(5px); color: #ff66cc; }
+        }
+        .loading {
+            font-size: 24px;
+            color: #ff6600;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+        .down {
+            color: #ff0000;
+            font-size: 30px;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
-<div class="container">
-    <div class="card">
-        <h1>Happy Birthday Rini</h1>
-        <p>I wish you will have a lovely birthday with all your favorite things and people.</p>
-        <img src="assets/Background.png" alt="birthday-cake">
-        <div class="buttons">
-            <button class="primary" onclick="openGift()">🎁 Open Your Gift</button>
-            <button class="primary" onclick="openAnotherModal()">🎉 Surprise!?</button>
+    <div class="header">
+        <h1>Zikirah x Miku DDoS Test</h1>
+        <p>Testing server strength and stability with DDoS attacks</p>
+    </div>
+
+    <div class="content">
+        <h2>Welcome to the Zikirah x Miku DDoS Testing Site</h2>
+        <p>This site is designed to simulate how servers react to DDoS attacks.</p>
+
+        <!-- Simulating DDoS Impact: Lag, Overload, Unavailability -->
+        <p class="highlight animation">DDoS Attack Simulation in Progress...</p>
+        <p class="glitch">Warning: Server Overload Detected! Please wait...</p>
+        <p class="loading">Loading... (please be patient)</p>
+        <p class="down">ERROR: The server is down due to an overwhelming amount of traffic.</p>
+        <p>Trying to access the site might result in errors or delays as the server is struggling to handle excessive requests.</p>
+
+        <!-- Simulated Text: Server going offline -->
+        <p class="down">DDoS Attack in Progress... Server Temporarily Unavailable</p>
+        
+        <!-- Display Glitch Effects Simulating Server Strain -->
+        <div class="glitch">
+            <p>⚠️ WARNING ⚠️ - SYSTEM STRAIN: Server unable to process more requests!</p>
+            <p>⚠️ ERROR 503: Service Unavailable ⚠️</p>
         </div>
     </div>
-    <div class="message" id="message"></div>
-    <div class="countdown" id="countdown"></div> <!-- Countdown added here -->
-</div>
 
-<!-- Gift Modal -->
-<div id="giftModal" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeModal('giftModal')">&times;</span>
-        <h2>"May he give you the desire of your heart and make all your plans succeed." - Psalm 20:4</h2>
-        <!-- Content of your gift modal goes here -->
+    <div class="footer">
+        <p>&copy; 2025 Zikirah x Miku. All rights reserved.</p>
+        <p>Website created for educational purposes. Simulating DDoS effects.</p>
     </div>
-</div>
-<!-- Popup Message Modal -->
-<div id="popupMessage" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeModal('popupMessage')">&times;</span>
-        <h2>Message From Nashson!?</h2>
-        <p>Heyy Rini Im sorry I couldnt give you any gifts but for now what I can give you is my love for you hehehehe I hope you liked this webiste I made! agian I wish you a veryyy happpy birthdayyy may god bless you and your whole family. You are actually a very awesome person. I hope you will do well and awesome and face all the problems that comes into your life on upcomming dayss/yearsss. ONCE AGAIN HAPPY BIRTHDAYY</p>
-    </div>
-</div>
-<!-- Bible Verse Modal -->
-<div id="bibleModal" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeModal('bibleModal')">&times;</span>
-        <h2>Bible Verse</h2>
-        <p id="bibleVerse"></p>
-    </div>
-</div>
-
-<div class="footer">
-    <p>Made with ❤️ by Nashson</p>
-</div>
-
-<script>
-    // Set the birth date of Rini (July 9, 2007)
-    const birthDate = new Date('2007-07-09T00:00:00');
-    const countdownElement = document.getElementById('countdown');
-
-    function updateCountdown() {
-        const currentDate = new Date();
-        const difference = currentDate - birthDate;
-
-        // Calculate elapsed time in years, months, days, hours, minutes, seconds
-        const totalSeconds = Math.floor(difference / 1000);
-        const years = Math.floor(totalSeconds / (365 * 24 * 60 * 60));
-        const months = Math.floor((totalSeconds % (365 * 24 * 60 * 60)) / (30 * 24 * 60 * 60)); // Approximate months
-        const days = Math.floor((totalSeconds % (24 * 60 * 60)) / (60 * 60 * 24));
-        const hours = Math.floor((totalSeconds % (60 * 60 * 24)) / (60 * 60));
-        const minutes = Math.floor((totalSeconds % (60 * 60)) / 60);
-        const seconds = totalSeconds % 60;
-
-        // Display the countdown with animation
-        countdownElement.innerHTML = `
-            <p>Counting the Years Since Your Beauty Came To Earth</p>
-            <p>${years} years, ${months} months, ${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds</p>
-        `;
-        
-        // Repeat the update every second for animation effect
-        setTimeout(updateCountdown, 1000);
-    }
-
-    // Start the countdown
-    updateCountdown();
-
-    function showMessage(type) {
-        const messageDiv = document.getElementById('message');
-        if (type === 'gift') {
-            messageDiv.innerHTML = '<p>You are the most precious gift in my life. Happy Birthday! 🎂❤️</p>';
-        } else {
-            messageDiv.innerHTML = '<p>Let\'s celebrate your special day together. You mean the world to me! 🎉💕</p>';
-        }
-    }
-
-    function openGift() {
-        closeModal('bibleModal'); // Close Bible modal if open
-        const modal = document.getElementById('giftModal');
-        modal.style.display = 'block';
-    }
-
-    function openAnotherModal() {
-        closeModal('bibleModal'); // Close Bible modal if open
-        const modal = document.getElementById('popupMessage');
-        modal.style.display = 'block';
-        launchConfetti();
-    }
-
-    function displayBibleVerse() {
-        const verses = [
-            "For I know the plans I have for you, declares the Lord, plans for welfare and not for evil, to give you a future and a hope. - Jeremiah 29:11",
-            "The Lord bless you and keep you; the Lord make his face to shine upon you and be gracious to you. - Numbers 6:24-25"
-            // Add more verses as needed
-        ];
-        const randomIndex = Math.floor(Math.random() * verses.length);
-        const bibleVerseDiv = document.getElementById('bibleVerse');
-        bibleVerseDiv.textContent = verses[randomIndex];
-        const bibleModal = document.getElementById('bibleModal');
-        bibleModal.style.display = 'block';
-    }
-
-    function closeModal(modalId) {
-        const modal = document.getElementById(modalId);
-        modal.style.display = 'none';
-    }
-
-    window.onclick = function(event) {
-        const modal = document.getElementById('giftModal');
-        const popupModal = document.getElementById('popupMessage');
-        const bibleModal = document.getElementById('bibleModal');
-        if (event.target === modal) {
-            modal.style.display = 'none';
-        }
-        if (event.target === popupModal) {
-            popupModal.style.display = 'none';
-        }
-        if (event.target === bibleModal) {
-            bibleModal.style.display = 'none';
-        }
-    }
-
-    function launchConfetti() {
-    const confettiContainer = document.createElement('div');
-    confettiContainer.classList.add('confetti-container');
-    document.body.appendChild(confettiContainer);
-
-    for (let i = 0; i < 100; i++) {
-        const confetti = document.createElement('div');
-        confetti.classList.add('confetti');
-        confetti.style.left = `${Math.random() * 100}vw`;
-        confetti.style.animationDuration = `${Math.random() * 3 + 2}s`;
-        confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
-        confettiContainer.appendChild(confetti);
-    }
-
-    setTimeout(() => {
-        document.body.removeChild(confettiContainer);
-    }, 5000); // Remove confetti after 5 seconds
-}
-
-    // Debugging: Check if the countdown function is being called
-    console.log("Countdown script loaded.");
-</script>
 </body>
 </html>
